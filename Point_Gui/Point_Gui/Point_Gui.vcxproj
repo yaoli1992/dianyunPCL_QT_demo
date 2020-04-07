@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B12702AD-ABFB-343A-A199-8E24837244A3}</ProjectGuid>
+    <Keyword>Qt4VSv1.0</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup Condition="'$(QtMsBuild)'=='' or !Exists('$(QtMsBuild)\qt.targets')">
+    <QtMsBuild>$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>D:\PCL 1.8.1\include\pcl-1.8;D:\PCL 1.8.1\3rdParty\Boost\include\boost-1_64;D:\PCL 1.8.1\3rdParty\Eigen\eigen3;D:\PCL 1.8.1\3rdParty\FLANN\include;D:\PCL 1.8.1\3rdParty\QVTK\VTK\include\vtk-8.0;C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\PCL 1.8.1\lib;D:\PCL 1.8.1\3rdParty\FLANN\lib;D:\PCL 1.8.1\3rdParty\Boost\lib;D:\PCL 1.8.1\3rdParty\Qhull\lib;D:\PCL 1.8.1\3rdParty\QVTK\VTK\lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.10150.0\ucrt\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
+    <Import Project="$(QtMsBuild)\qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>UNICODE;WIN32;WIN64;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>qtmaind.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5Widgetsd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <QtMoc>
+      <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <IncludePath>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</IncludePath>
+      <Define>UNICODE;WIN32;WIN64;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</Define>
+    </QtMoc>
+    <QtUic>
+      <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
+      <OutputFile>.\GeneratedFiles\ui_%(Filename).h</OutputFile>
+    </QtUic>
+    <QtRcc>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <OutputFile>.\GeneratedFiles\qrc_%(Filename).cpp</OutputFile>
+    </QtRcc>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>UNICODE;WIN32;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat />
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>qtmain.lib;Qt5Core.lib;Qt5Gui.lib;Qt5Widgets.lib;pcl_common_release.lib;pcl_features_release.lib;pcl_filters_release.lib;pcl_io_release.lib;pcl_io_ply_release.lib;pcl_kdtree_release.lib;pcl_keypoints_release.lib;pcl_ml_release.lib;pcl_octree_release.lib;pcl_outofcore_release.lib;pcl_people_release.lib;pcl_recognition_release.lib;pcl_registration_release.lib;pcl_sample_consensus_release.lib;pcl_search_release.lib;pcl_segmentation_release.lib;pcl_stereo_release.lib;pcl_surface_release.lib;pcl_tracking_release.lib;pcl_visualization_release.lib;flann_cpp_s.lib;flann_s.lib;flann.lib;libboost_atomic-vc140-mt-1_64.lib;libboost_chrono-vc140-mt-1_64.lib;libboost_container-vc140-mt-1_64.lib;libboost_context-vc140-mt-1_64.lib;libboost_coroutine-vc140-mt-1_64.lib;libboost_date_time-vc140-mt-1_64.lib;libboost_exception-vc140-mt-1_64.lib;libboost_filesystem-vc140-mt-1_64.lib;libboost_graph-vc140-mt-1_64.lib;libboost_iostreams-vc140-mt-1_64.lib;libboost_locale-vc140-mt-1_64.lib;libboost_log-vc140-mt-1_64.lib;libboost_log_setup-vc140-mt-1_64.lib;libboost_math_c99-vc140-mt-1_64.lib;libboost_math_c99f-vc140-mt-1_64.lib;libboost_math_c99l-vc140-mt-1_64.lib;libboost_math_tr1-vc140-mt-1_64.lib;libboost_math_tr1f-vc140-mt-1_64.lib;libboost_math_tr1l-vc140-mt-1_64.lib;libboost_mpi-vc140-mt-1_64.lib;libboost_prg_exec_monitor-vc140-mt-1_64.lib;libboost_program_options-vc140-mt-1_64.lib;libboost_random-vc140-mt-1_64.lib;libboost_regex-vc140-mt-1_64.lib;libboost_serialization-vc140-mt-1_64.lib;libboost_signals-vc140-mt-1_64.lib;libboost_system-vc140-mt-1_64.lib;libboost_test_exec_monitor-vc140-mt-1_64.lib;libboost_thread-vc140-mt-1_64.lib;libboost_timer-vc140-mt-1_64.lib;libboost_unit_test_framework-vc140-mt-1_64.lib;libboost_wave-vc140-mt-1_64.lib;libboost_wserialization-vc140-mt-1_64.lib;qhullstatic.lib;qhull.lib;qhull_p.lib;qhull_r.lib;qhullcpp.lib;qhullstatic_r.lib;libEGL.lib			;
+QVTKWidgetPlugin.lib;
+
+
+QVTKWidgetPlugin.lib			;vtkInteractionWidgets-8.0.lib;
+vtkalglib-8.0.lib			;vtkIOAMR-8.0.lib;vtkChartsCore-8.0.lib		;vtkIOCore-8.0.lib
+;vtkCommonColor-8.0.lib			;vtkIOEnSight-8.0.lib;
+vtkCommonComputationalGeometry-8.0.lib	;vtkIOExodus-8.0.lib
+;vtkCommonCore-8.0.lib			;vtkIOExport-8.0.lib
+;vtkCommonDataModel-8.0.lib		;vtkIOExportOpenGL2-8.0.lib;
+vtkCommonExecutionModel-8.0.lib		;vtkIOGeometry-8.0.lib
+;vtkCommonMath-8.0.lib			;vtkIOImage-8.0.lib;
+vtkCommonMisc-8.0.lib			;vtkIOImport-8.0.lib;
+vtkCommonSystem-8.0.lib			;vtkIOInfovis-8.0.lib
+;vtkCommonTransforms-8.0.lib		;vtkIOLegacy-8.0.lib;
+vtkDICOMParser-8.0.lib			;vtkIOLSDyna-8.0.lib;
+vtkDomainsChemistry-8.0.lib		;vtkIOMINC-8.0.lib;
+vtkDomainsChemistryOpenGL2-8.0.lib	;vtkIOMovie-8.0.lib;
+vtkexoIIc-8.0.lib			;vtkIONetCDF-8.0.lib;
+vtkexpat-8.0.lib			;vtkIOParallel-8.0.lib;
+vtkFiltersAMR-8.0.lib			;vtkIOParallelXML-8.0.lib;
+vtkFiltersCore-8.0.lib			;vtkIOPLY-8.0.lib
+;vtkFiltersExtraction-8.0.lib		;vtkIOSQL-8.0.lib
+;vtkFiltersFlowPaths-8.0.lib		;vtkIOTecplotTable-8.0.lib;
+vtkFiltersGeneral-8.0.lib		;vtkIOVideo-8.0.lib;
+vtkFiltersGeneric-8.0.lib		;vtkIOXML-8.0.lib
+;vtkFiltersGeometry-8.0.lib		;vtkIOXMLParser-8.0.lib;
+vtkFiltersHybrid-8.0.lib		;vtkjpeg-8.0.lib
+;vtkFiltersHyperTree-8.0.lib		;vtkjsoncpp-8.0.lib;
+vtkFiltersImaging-8.0.lib		;vtklibharu-8.0.lib
+;vtkFiltersModeling-8.0.lib		;vtklibxml2-8.0.lib;
+vtkFiltersParallel-8.0.lib		;vtklz4-8.0.lib;
+vtkFiltersParallelImaging-8.0.lib	;vtkmetaio-8.0.lib;
+vtkFiltersPoints-8.0.lib		;vtknetcdf_c++.lib;
+vtkFiltersProgrammable-8.0.lib		;vtkNetCDF-8.0.lib;
+vtkFiltersSelection-8.0.lib		;vtkoggtheora-8.0.lib;
+vtkFiltersSMP-8.0.lib			;vtkParallelCore-8.0.lib;
+vtkFiltersSources-8.0.lib		;vtkpng-8.0.lib;
+vtkFiltersStatistics-8.0.lib		;vtkproj4-8.0.lib;
+vtkFiltersTexture-8.0.lib		;vtkRenderingAnnotation-8.0.lib;
+vtkFiltersTopology-8.0.lib		;vtkRenderingContext2D-8.0.lib
+;vtkFiltersVerdict-8.0.lib		;vtkRenderingContextOpenGL2-8.0.lib;
+vtkfreetype-8.0.lib			;vtkRenderingCore-8.0.lib;
+vtkGeovisCore-8.0.lib			;vtkRenderingFreeType-8.0.lib
+;vtkgl2ps-8.0.lib			;vtkRenderingGL2PSOpenGL2-8.0.lib;
+vtkglew-8.0.lib				;vtkRenderingImage-8.0.lib;
+vtkGUISupportQt-8.0.lib			;vtkRenderingLabel-8.0.lib;
+vtkGUISupportQtSQL-8.0.lib		;vtkRenderingLOD-8.0.lib;
+vtkhdf5_hl-8.0.lib			;vtkRenderingOpenGL2-8.0.lib;
+vtkhdf5-8.0.lib				;vtkRenderingQt-8.0.lib;
+vtkImagingColor-8.0.lib			;vtkRenderingVolume-8.0.lib
+;vtkImagingCore-8.0.lib			;vtkRenderingVolumeOpenGL2-8.0.lib;
+vtkImagingFourier-8.0.lib		;vtksqlite-8.0.lib
+;vtkImagingGeneral-8.0.lib		;vtksys-8.0.lib
+;vtkImagingHybrid-8.0.lib		;vtkTestingGenericBridge-8.0.lib
+;vtkImagingMath-8.0.lib			;vtkTestingIOSQL-8.0.lib;
+vtkImagingMorphological-8.0.lib		;vtkTestingRendering-8.0.lib;
+vtkImagingSources-8.0.lib		;vtktiff-8.0.lib
+;vtkImagingStatistics-8.0.lib		;vtkverdict-8.0.lib;
+vtkImagingStencil-8.0.lib		;vtkViewsContext2D-8.0.lib;
+vtkInfovisCore-8.0.lib			;vtkViewsCore-8.0.lib;
+vtkInfovisLayout-8.0.lib		;vtkViewsInfovis-8.0.lib;
+vtkInteractionImage-8.0.lib		;vtkViewsQt-8.0.lib;
+vtkInteractionStyle-8.0.lib		;vtkzlib-8.0.lib
+;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <QtMoc>
+      <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <IncludePath>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</IncludePath>
+      <Define>UNICODE;WIN32;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</Define>
+    </QtMoc>
+    <QtUic>
+      <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
+      <OutputFile>.\GeneratedFiles\ui_%(Filename).h</OutputFile>
+    </QtUic>
+    <QtRcc>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <OutputFile>.\GeneratedFiles\qrc_%(Filename).cpp</OutputFile>
+    </QtRcc>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Point_Gui.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Point_Gui.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="Point_Gui.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="Point_Gui.qrc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties MocDir=".\GeneratedFiles\$(ConfigurationName)" UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" lupdateOptions="" lupdateOnBuild="0" lreleaseOptions="" Qt5Version_x0020_x64="qt5.8" MocOptions="" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
