@@ -1,6 +1,7 @@
 # dianyunPCL_QT_demo
 
 作者：particle
+
 公众号：点云PCL
 
 
@@ -12,15 +13,26 @@
 
 并且每一次按钮就会改变点云的颜色。
 
-#用法
+**运行界面**
+                                                                         
+![the outcome of point_Gui](https://github.com/yaoli1992/dianyunPCL_QT_demo/blob/master/image/image.JPG)
+
+
+
+
+# 用法
 
 dll_demo是可以直接运行exe以及dll文件，在win7和win10均可以直接运行，选择打开文件，选择pcd文件即可
 
 Point_Gui是工程文件，简单的有Qt界面设计文件.ui，以及主函数和.h  .cpp 两个文件，只要能够按照“点云PCL”
 
-公众号的教程文章：https://mp.weixin.qq.com/s?__biz=MzI0MDYxMDk0Ng==&mid=2247486315&idx=1&sn=c100ad4b44dbf576adf165e9ed62c745&chksm=e9197086de6ef990ae5a52382f203575906bbef18001c4dd1f137ce260ed12d176e21567ffc4&token=1985145962&lang=zh_CN#rd
+[公众号的教程文章](https://mp.weixin.qq.com/s?__biz=MzI0MDYxMDk0Ng==&mid=2247486315&idx=1&sn=c100ad4b44dbf576adf165e9ed62c745&chksm=e9197086de6ef990ae5a52382f203575906bbef18001c4dd1f137ce260ed12d176e21567ffc4&token=1985145962&lang=zh_CN#rd)
 
 在配置环境的时候需要更改工程属性的PCL的配置，并且可以在此工程的基础上继续开发，如有问题或者
 
 其他需求可联系：dianyunpcl@163.com 
+
+# 公众号二维码
+
+![the GUI of this project](https://github.com/yaoli1992/dianyunPCL_QT_demo/blob/master/image/qcode.png)
 
